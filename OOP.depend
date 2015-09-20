@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1442721082 source:d:\2d game workspace sdl\oop\main.cpp
+	<iostream>
+	"rentvidlist.h"
+	"videolist.h"
+
+1442173960 source:d:\2d game workspace sdl\oop\time.cpp
+	"time.h"
+	<iostream>
+
+1442173785 d:\2d game workspace sdl\oop\time.h
+
+1442704302 d:\2d game workspace sdl\oop\customer.h
+	<string>
+
+1442720730 d:\2d game workspace sdl\oop\rentvidlist.h
+	<fstream>
+	"rentvideo.h"
+
+1442703703 d:\2d game workspace sdl\oop\rentvideo.h
+	"video.h"
+	"customer.h"
+
+1442704228 d:\2d game workspace sdl\oop\video.h
+	<string>
+
+1442720488 d:\2d game workspace sdl\oop\videolist.h
+	"video.h"
+
+1442704844 source:d:\2d game workspace sdl\oop\rentvideo.cpp
+	"rentvideo.h"
+	<iostream>
+
+1442703512 source:d:\2d game workspace sdl\oop\video.cpp
+	"video.h"
+	<iostream>
+	<string>
+
+1442704835 source:d:\2d game workspace sdl\oop\customer.cpp
+	"customer.h"
+	<iostream>
+
+1442720448 source:d:\2d game workspace sdl\oop\videolist.cpp
+	"videolist.h"
+	<iostream>
+	<fstream>
+
+1442720848 source:d:\2d game workspace sdl\oop\rentvidlist.cpp
+	"rentvidlist.h"
+	<iostream>
+
