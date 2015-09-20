@@ -83,6 +83,16 @@ bool VideoList::IsPresent(Video item) const {
     return false;
 }
 
+int VideoList::GetLength() const {
+    return length;
+}
+
+void VideoList::GetArray(Video vidList[500]) const {
+    for(int i = 0; i < length; i++) {
+        vidList[i] = videoList[i];
+    }
+}
+
 void VideoList::PrintList() const {
     for(int i = 0; i < length; i++) {
         videoList[i].PrintInfo();
@@ -97,10 +107,13 @@ bool VideoList::IsSame(Video vid1, Video vid2) const {
     return false;
 }
 
-void VideoList::InputFromFile() {
+void VideoList::InputFromFile(int lngth) {
     std::ifstream input;
     std::string title;
     int id;
+    if(length != lngth) {
+        length = lngth;
+    }
     input.open("returnedlist_i.dat");
     for(int i = 0; i < length; i++) {
         input >> title >> id;

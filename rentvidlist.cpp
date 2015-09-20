@@ -98,6 +98,16 @@ bool RentedVideoList::IsPresent(RentedVideo item) const {
     return false;
 }
 
+int RentedVideoList::GetLength() const {
+    return length;
+}
+
+void RentedVideoList::GetArray(RentedVideo vidList[500]) const {
+    for(int i = 0; i < length; i++) {
+        vidList[i] = videoList[i];
+    }
+}
+
 void RentedVideoList::PrintList() const {
     for(int i = 0; i < length; i++) {
         videoList[i].PrintInfo();
@@ -112,15 +122,23 @@ bool RentedVideoList::IsSame(RentedVideo vid1, RentedVideo vid2) const {
     return false;
 }
 
-void RentedVideoList::InputFromFile() {
+void RentedVideoList::InputFromFile(int lngth) {
     std::ifstream input;
     std::string title;
+    std::string customerName;
     int id;
+    int customerAge;
+    int customerID;
+    if(length != lngth) {
+        length = lngth;
+    }
     input.open("rentedlist_i.dat");
     for(int i = 0; i < length; i++) {
-        input >> title >> id;
+        input >> title >> id >> customerName >> customerAge >> customerID;
         videoList[i].SetTitle(title);
         videoList[i].SetID(id);
+        CustomerInfo customerInfo(customerName, customerID, customerAge);
+        videoList[i].SetCustomer(customerInfo);
         if(!input) {
             continue;
         }
@@ -132,7 +150,7 @@ void RentedVideoList::OutputToFile() const {
     std::ofstream output;
     output.open("rentedlist_o.dat");
     for(int i = 0; i < length; i++) {
-        output << videoList[i].GetTitle() << " " << videoList[i].GetID();
+        output << videoList[i].GetTitle() << " " << videoList[i].GetID() << " " << videoList[i].GetCustomer().GetName() << " " << videoList[i].GetCustomer().GetAge() << " " << videoList[i].GetCustomer().GetID();
         if(i != length - 1) {
             output << std::endl;
         }

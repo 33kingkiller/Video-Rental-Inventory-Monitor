@@ -14,8 +14,10 @@ class VideoList {
         bool IsFull() const;
         bool IsEmpty() const;
         bool IsPresent(Video video) const;
+        int GetLength() const;
+        void GetArray(Video videoList[500]) const;
         void PrintList() const;
-        void InputFromFile();
+        void InputFromFile(int length);
         void OutputToFile() const;
     private:
         Video videoList[500];

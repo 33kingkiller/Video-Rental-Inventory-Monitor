@@ -18,8 +18,10 @@ class RentedVideoList {
         bool IsFull() const;
         bool IsEmpty() const;
         bool IsPresent(RentedVideo video) const;
+        int GetLength() const;
+        void GetArray(RentedVideo videoList[500]) const;
         void PrintList() const;
-        void InputFromFile();
+        void InputFromFile(int length);
         void OutputToFile() const;
     private:
         RentedVideo videoList[MAX_LENGTH];
